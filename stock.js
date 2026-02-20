@@ -7,17 +7,14 @@ const stockTime = document.getElementById("stock-time");
 const currencyBtn = document.getElementById("currency-btn");
 const themeBtn = document.getElementById("theme-btn");
 
-
 const prevCrypto = {}; 
 const prevStock = {};
 const trendMemory = {};
-
 
 let currency = localStorage.getItem("currency") || "USD";
 const USD_TO_INR = 83;
 
 currencyBtn.textContent = currency === "USD" ? "₹ INR" : "$ USD";
-
 
 function getTrend(key, current, previous) {
     let cls = "up";
