@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: radial-gradient(circle at top, #eef2f7, #f6f8fb);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Smooth theme transition */
+body,
+.card,
+li,
+.app-header,
+.price,
+.updated-time {
+    transition:
+        background-color 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.app {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.app-header h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.app-header p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.crypto-card h2 {
+    color: #f7931a;
+}
+
+.stock-card h2 {
+    color: #2563eb;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    background: #f5f7fa;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.up {
+    color: #16a34a;
+}
+
+.down {
+    color: #dc2626;
+}
+
+.updated-time {
+    font-size: 11px;
+    color: #6b7280;
+    text-align: right;
+    margin-top: 6px;
+}
+
+#crypto-error,
+#stock-error {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #b45309;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* THEME TOGGLE*/
+.theme-toggle {
+    margin-top: 12px;
+}
+
+.theme-toggle button {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    background: #111827;
+    color: #fff;
+    transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.15s ease;
+    }
+
+.theme-toggle button:hover {
+    transform: scale(1.05);
+}
+
+.currency-toggle {
+    margin-top: 8px;
+}
+
+.currency-toggle button {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    background: #2563eb;
+    color: #fff;
+    transition: transform 0.15s ease;
+}
+
+.currency-toggle button:hover {
+    transform: scale(1.05);
+}
+
+body.dark .currency-toggle button {
+    background: #22c55e;
+    color: #020617;
+}
+
+/* DARK MODE */
+body.dark {
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: #e5e7eb;
+}
+
+body.dark .card {
+    background: #020617;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+body.dark li {
+    background: #020617;
+}
+
+body.dark .price {
+    color: inherit;
+}
+
+body.dark .updated-time,
+body.dark .app-header p {
+    color: #9ca3af;
+}
+
+body.dark .theme-toggle button {
+    background: #f9fafb;
+    color: #111827;
+}
+
+body.dark .card {
+    animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.85;
+        transform: translateY(2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
