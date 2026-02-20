@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: "Segoe UI", system-ui, sans-serif;
     background: radial-gradient(circle at top, #eef2f7, #f6f8fb);
@@ -13,7 +12,6 @@ body {
     align-items: center;
 }
 
-/* Smooth theme transition */
 body,
 .card,
 li,
